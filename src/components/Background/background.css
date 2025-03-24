@@ -1,0 +1,43 @@
+@keyframes parallax {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .motion-parallax {
+    animation: parallax 5s linear infinite;
+    height: 105vh;
+  }
+
+  @keyframes grainy-move {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-2px, 2px);
+    }
+    50% {
+        transform: translate(2px, -2px);
+    }
+    75% {
+        transform: translate(-2px, -2px);
+    }
+    100% {
+        transform: translate(2px, 2px);
+    }
+}
+
+
+  @layer utilities {
+    .grainy-overlay {
+        background-color: rgba(0, 0, 0, 0.25); /* Increase opacity for better contrast */
+        background-image: radial-gradient(rgba(0, 0, 0, 0.35) 1px, transparent 1px); /* Darker grain effect */
+        background-size: 2px 2px; /* Reduce size for a denser grain */
+        opacity: 0.5; /* Increase visibility */
+        mix-blend-mode: overlay; /* More contrast with background */
+        animation: grainy-move 5s infinite linear alternate; /* Adds subtle movement */
+    }
+  }
