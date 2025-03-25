@@ -121,11 +121,11 @@ function Carousel() {
       <div className="mt-8 flex space-x-4">
         <button
           onClick={() => paginate(-1)}
-          className="bg-gray-300 p-3 rounded-full opacity-70 cursor-pointer"
+          className="bg-gray-300 p-3 rounded-full opacity-70 cursor-none"
         ></button>
         <button
           onClick={() => paginate(1)}
-          className="bg-gray-300 p-3 rounded-full opacity-70 cursor-pointer"
+          className="bg-gray-300 p-3 rounded-full opacity-70 cursor-none"
         ></button>
       </div>
     </div>
