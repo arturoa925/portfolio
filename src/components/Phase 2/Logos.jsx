@@ -1,13 +1,33 @@
 import {motion} from "framer-motion";
+import {useState, useEffect} from "react";
 
 function Logos() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // * Check screen width to determine if it's mobile.
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
     return (
       // * The motion.div is the container for all the logos
-        <motion.div
-        className="relative w-[100vw] h-[120vw] mx-auto"
-        whileHover={{ rotate: 360 }} 
-        transition={{ duration: 4, ease: "linear" }}
-      >
+      <motion.div 
+      className="relative w-[100vw] h-[120vw] mx-auto"
+      // * On mobile, auto-rotate continuously; on desktop, rotate on hover.
+      animate={isMobile ? { rotate: 360 } : {}}
+      whileHover={isMobile ? {} : { rotate: 360 }}
+      transition={
+        isMobile
+          ? { repeat: Infinity, duration: 4, ease: "linear" }
+          : { duration: 4, ease: "linear" }
+      }
+    >
         {/* Top Center */}
         <img
           src="/API Icon.png"

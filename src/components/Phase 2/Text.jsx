@@ -29,12 +29,15 @@ function Text() {
       className="lg:mt-40"
       variants={containerVariants}
       initial="hidden"
-      whileHover="visible"
+       // * Use whileHover for desktop and whileTap for mobile touches:
+       whileHover="visible"
+       whileTap="visible"
     >
       <div className="flex ml-12 sm:ml-12 md:ml-20 lg:ml-30">
         <motion.h1
           variants={itemVariants}
           whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 1.15 }}
           className="text-4xl sm:text-4xl md:text-6xl lg:text-8xl text-white font-[Libre_Baskerville]"
         >
           Full
@@ -44,6 +47,7 @@ function Text() {
         <motion.h1
           variants={itemVariants}
           whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 1.15 }}
           className="text-4xl sm:text-4xl md:text-6xl lg:text-8xl text-white font-[Libre_Baskerville]"
         >
           Stack
@@ -53,6 +57,7 @@ function Text() {
         <motion.h1
           variants={itemVariants}
           whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 1.15 }}
           className="text-4xl sm:text-4xl md:text-6xl lg:text-8xl text-white font-[Libre_Baskerville]"
         >
           Engineer

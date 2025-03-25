@@ -9,8 +9,19 @@ function MouseFollower() {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
+    const handleTouchMove = (e) => {
+      if (e.touches && e.touches[0]) {
+        setPosition({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+      }
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
   }, []);
 
   return (

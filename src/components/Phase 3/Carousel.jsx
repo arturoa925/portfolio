@@ -103,7 +103,7 @@ function Carousel() {
             <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl text-center font-bold mb-2">
               {projects[projectIndex].title}
             </h2>
-            <a href={projects[projectIndex]?.link}>
+            <a href={projects[projectIndex]?.link} className="cursor-none">
             <img
               src={projects[projectIndex].image}
               alt={projects[projectIndex].title}
