@@ -31,6 +31,13 @@ curates daily workout routines for users based on equipment availability (gym or
 Each workout includes suggested rep ranges, durations, and multimedia demonstrations.
 Features a built-in calendar for tracking consistency and workout history.`,
   },
+  {
+    id: 4,
+    title: "How I Built This",
+    image: "/github card.png",
+    link: "https://gist.github.com/arturoa925/35d84161ec3077d1077bed8c11ee4edc",
+    description: `To see how I built this portfolio, check out the breakdown in my Github Gist.`
+  }
 ];
 
 const swipeConfidenceThreshold = 10000; // Adjust this threshold for swipe sensitivity
